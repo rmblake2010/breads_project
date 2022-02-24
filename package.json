@@ -1,0 +1,25 @@
+{
+  "name": "breads_project",
+  "version": "1.0.0",
+  "description": "First fullstack API project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmblake2010/breads_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmblake2010/breads_project/issues"
+  },
+  "homepage": "https://github.com/rmblake2010/breads_project#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
