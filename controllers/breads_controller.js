@@ -6,15 +6,25 @@ const Bread = require('../models/bread')
 breads.get('/', (req, res) => {
   res.render('Index',
     {
-      breads: Bread
+      breads: Bread,
+      title: 'My Index Page!'
     }
   )  
   //res.send(Bread)
 })
 
 // SHOW
+// SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    res.send(Bread[req.params.arrayIndex] ? Bread[req.params.arrayIndex] : "Invalid input" )
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex]
+    })
+  } else {
+    res.send('<h1>404 Page</h1>')
+  }
 })
+
+
 
 module.exports = breads
