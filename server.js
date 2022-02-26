@@ -23,7 +23,7 @@ app.use('/breads', breadsController)
 
 //wild-card
 app.get('*', (req, res) => {
-    res.send('<h1>404 Page</h1>')
+    res.render('notFound')
 })
 
 // LISTEN
