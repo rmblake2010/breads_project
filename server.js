@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended: true}))
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.send('<h1>Welcome to an Awesome App about Breads!</h1>')
+  res.redirect('/breads')
 })
 
 // Breads
