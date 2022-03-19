@@ -17,7 +17,7 @@ const app = express()
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
-app.use(timeout('30s'))
+app.use(timeout('90s'))
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
