@@ -7,15 +7,13 @@ const bakerSeedData = require('../models/baker_seed.js')
 
 
 //Index
-breads.get('/', async (req, res) => {
-    const foundBakers = await Baker.find().lean()
-    const foundBreads = await Bread.find().limit(6).lean()
-            res.render('index', {
-                breads: foundBreads,
-                bakers: foundBakers,
-                title: 'Index Page'
-    })
-  })
+baker.get('/', (req, res) => {
+    Baker.find()
+        .populate('breads')
+        .then(foundBakers => {
+            res.send(foundBakers)
+        })
+})    
 
 // Show: 
 baker.get('/:id', (req, res) => {
