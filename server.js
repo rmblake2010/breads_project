@@ -9,7 +9,7 @@ require('dotenv').config()
 const PORT = process.env.PORT
 // DATABASE CONNECTION
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
-  () => { console.log('connected to mongo:  ', process.env.MONGO_URI)})
+  (err) => {if(err) throw err})
 // CREATING EXPRESS APP
 const app = express()
 
