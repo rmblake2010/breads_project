@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
+const timeout = require('connect-timeout')
 const mongoose = require('mongoose')
 
 // CONFIGURATION
@@ -16,6 +17,7 @@ const app = express()
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
+app.use(timeout('30s'))
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
